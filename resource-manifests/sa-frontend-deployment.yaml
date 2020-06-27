@@ -1,23 +1,26 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment                                          # 1
 metadata:
   name: sa-frontend
 spec:
-  replicas: 2                                             # 2
+  selector:                                               # 2
+    matchLabels:
+      app: sa-frontend                                    
+  replicas: 2                                             # 3
   minReadySeconds: 15
   strategy:
-    type: RollingUpdate                                   # 3
+    type: RollingUpdate                                   # 4
     rollingUpdate: 
-      maxUnavailable: 1                                   # 4
-      maxSurge: 1                                         # 5
-  template:
+      maxUnavailable: 1                                   # 5
+      maxSurge: 1                                         # 6
+  template:                                               # 7
     metadata:
       labels:
-        app: sa-frontend                                  # 6
+        app: sa-frontend                                  # 8
     spec:
       containers:
-        - image: rinormaloku/sentiment-analysis-frontend
-          imagePullPolicy: Always                         # 7
+        - image: hhtun21/sentiment-analysis-frontend:eks
+          imagePullPolicy: Always                         # 9
           name: sa-frontend
           ports:
             - containerPort: 80
