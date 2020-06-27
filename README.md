@@ -1,7 +1,8 @@
 # Sentiment Analysis application
-![](https://cdn-images-1.medium.com/max/1600/1*oH9lP-4GWT8eQHh_X5obsw.gif)
+![](https://github.com/hhassen/k8s-app-sentiment/raw/master/images/App_sent_analyser_architecture.gif)
 
-## Kubernetes
+## Kubernetes
+
 * Set up `minikube` to run Kubernetes locally.
 #### Pods
 * Launch **pods** manually
@@ -23,7 +24,7 @@
 #### Amazon EKS
 * Migrate our local cluster to amazon EKS
 
-![](https://cdn-media-1.freecodecamp.org/images/Rl5B3SRE5U5IiIM-8-1HnZdnwMx1TzegzV3D)
+![](https://github.com/hhassen/k8s-app-sentiment/raw/master/images/App_sent_analyser_demo.gif)
 
 ## Docker-Compose
 To get up and running with the application execute:
